@@ -1,3 +1,4 @@
+# ORM
 ## The Commands
 - **migrate**, which is responsible for applying and unapplying migrations.
 - **makemigrations**, which is responsible for creating new migrations based on the changes you have made to your models.
@@ -19,3 +20,20 @@ from django.db.models import Q
 Book.objects.filter(Q(rating__lt=3) | Q(is-bestselling=True), Q(author="J.K Rowling"))
 
 ```
+
+# Admin
+
+```
+python manage.py createsuperuser
+```
+
+## Add Book model to admin
+```
+from .models import Book
+
+admin.site.register(Book)
+```
+
+## Admin configuration
+
+https://docs.djangoproject.com/en/4.2/ref/contrib/admin/
