@@ -21,6 +21,8 @@ Book.objects.filter(Q(rating__lt=3) | Q(is-bestselling=True), Q(author="J.K Rowl
 
 ```
 
+
+
 # Admin
 
 ```
@@ -37,3 +39,8 @@ admin.site.register(Book)
 ## Admin configuration
 
 https://docs.djangoproject.com/en/4.2/ref/contrib/admin/
+
+
+
+# Relationships
+
