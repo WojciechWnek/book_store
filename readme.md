@@ -44,3 +44,25 @@ https://docs.djangoproject.com/en/4.2/ref/contrib/admin/
 
 # Relationships
 
+Relations on a books Table
+
+One to many (one author can have many books)
+```
+class Book(models.Model):
+    [...]
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name="books")
+```
+
+One to one (one author can have one address)
+```
+class Author(models.Model):
+    [...]
+    address = models.OneToOneField(Address, on_delete=models.CASCADE, null=True)
+```
+
+Many to many (one book can be publushed in many countries)
+```
+class Book(models.Model):
+    [...]
+    published_countries = models.ManyToManyField(Country, null=False)
+```
